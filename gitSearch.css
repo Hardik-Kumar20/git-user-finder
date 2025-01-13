@@ -1,180 +1,119 @@
-/* General Reset */
-* {
+*{
     margin: 0;
     padding: 0;
-    box-sizing: border-box;
-    font-family: 'Roboto', sans-serif;
 }
 
-body {
-    background: linear-gradient(135deg, #1e3c72, #2a5298);
-    color: #fff;
-    min-height: 100vh;
+body{
+    background-color: rgb(180, 180, 180);
     display: flex;
     justify-content: center;
     align-items: center;
 }
 
-/* Container and Heading */
-.container {
-    width: 100%;
-    max-width: 600px;
-    padding: 20px;
-    text-align: center;
+.heading{
+    margin: 30px;
+    font-size: 35px;
+    font-family: 'Courier New', Courier, monospace;
 }
 
-.heading h1 {
-    font-size: 2.5rem;
-    margin-bottom: 20px;
-    color: #ffdd57;
-    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.4);
-}
-
-/* Data Card Section */
-.data-card {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
-.data-box {
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    background: rgba(255, 255, 255, 0.1);
-    backdrop-filter: blur(10px);
+.input input{
+    min-width: 500px;
+    max-width: 800px;
     border-radius: 20px;
-    padding: 30px;
-    width: 100%;
-    max-width: 500px;
-    box-shadow: 0px 8px 25px rgba(0, 0, 0, 0.3);
-    text-align: center;
-    transform: scale(1);
-    transition: transform 0.3s ease-in-out;
-    perspective: 1000px;
-}
-
-[data-tilt] {
-    transform-style: preserve-3d;
-}
-
-.data-box:hover {
-    transform: scale(1.05) rotateX(3deg) rotateY(3deg);
-}
-
-/* Glowing Search Bar */
-.input {
-    position: relative;
-    display: flex;
-    align-items: center;
-    margin-bottom: 20px;
-    background: rgba(255, 255, 255, 0.1);
-    border-radius: 30px;
-    padding: 15px 25px;
-    box-shadow: 0px 0px 20px rgba(255, 221, 87, 0.6);
-    overflow: hidden;
-    transition: box-shadow 0.3s ease-in-out;
-}
-
-.input:hover {
-    box-shadow: 0px 0px 30px rgba(255, 221, 87, 0.9);
-}
-
-.input i {
-    color: #ffdd57;
-    font-size: 1.5rem;
-    margin-right: 15px;
-}
-
-.input input {
-    border: none;
-    outline: none;
-    font-size: 1.2rem;
-    width: 100%;
-    padding: 5px 0;
-    background: transparent;
-    color: #fff;
-    font-weight: bold;
-}
-
-.input input::placeholder {
-    color: #ccc;
-    font-style: italic;
-}
-
-/* Profile Section */
-.profile-photo {
-    width: 140px;
-    height: 140px;
-    margin: 20px auto;
+    margin: 20px;
+    height: 30px;
+    transition: all 0.3s ease;
+    padding-left: 15px;
+    font-size: 17px;
     background-color: #fff;
-    border-radius: 50%;
-    overflow: hidden;
-    border: 4px solid #ffdd57;
+}
+.input input::placeholder{
+    text-align:center;
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 20px;
+    transition: all 0.3s ease;
+}
+.input input:hover{
+    min-width: 550px;
+    max-width: 880px;
+    box-shadow: inset 0 0 10px rgba(0, 122, 255, 0.4), 0 0 10px  rgba(0, 122, 255, 0.4), 0 0 10px rgba(0, 122, 255, 0.4),  0 0 10px rgba(0, 122, 255, 0.4); 
+    border-color:rgba(0, 122, 255, 0.4) ;
+
+    /* offset-x , offset-y , blur-radius , spread-radius color ----- format of box-shadow*/
 }
 
-.profile-photo img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
+ input:focus::placeholder{
+    text-align: left;
+    /* padding-left: 1px; */
 }
 
-/* User Info */
-.userName {
-    font-size: 1.8rem;
-    font-weight: bold;
-    color: #ffdd57;
-    margin-bottom: 20px;
+.input input:focus{
+    box-shadow: inset 0 0 10px rgba(0, 122, 255, 0.4), 0 0 10px  rgba(0, 122, 255, 0.4), 0 0 10px rgba(0, 122, 255, 0.4),  0 0 10px rgba(0, 122, 255, 0.4); 
+    border-color:rgba(0, 122, 255, 0.4) ;
 }
 
-/* Extra Details */
-.extra ul {
+
+/* making card for recieving info of a git hub user */
+
+.data-card{
     display: flex;
-    justify-content: space-between;
-    list-style: none;
-    padding: 0;
-    margin: 0;
-    gap: 20px;
+    justify-content: center;
+    align-items: center;
+    margin: 40px;
 }
-
-.extra ul li {
-    font-size: 1.1rem;
-    flex: 1;
+.data-box{
+    border: 2px solid black;
+    width: 500px;
+    height: 300px;
+    border-radius: 20px;
+}
+.profile-photo img{
+    width: 100px;
+    height: 100px;
+    border-radius: 80%;
+    border: 2px solid black;
+    margin: 30px;
+    transform: translateX(160px);
+}
+ul{
+    text-decoration: none;
+    display: flex;
+    gap: 50px;
+    margin: 10px;
+    transform: translateX(40px);
+    list-style-type: none;
+}
+ul li{
+    font-size: 22px;
+    font-family: 'Courier New', Courier, monospace;
+}
+span{
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 20px;
+}
+.followers{
+    border: 2px solid black;
+    border-radius: 20px;
     text-align: center;
-    padding: 15px;
-    background: rgba(255, 255, 255, 0.2);
-    border-radius: 15px;
-    color: #fff;
-    font-weight: bold;
-    box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.3);
-    transition: background 0.3s ease-in-out;
 }
 
-.extra ul li:hover {
-    background: #ffdd57;
-    color: #283e51;
+.following{
+    border: 2px solid black;
+    border-radius: 20px;
+    text-align: center;
+}
+.repos{
+    border: 2px solid black;
+    border-radius: 20px;
+    text-align: center;
 }
 
-/* Responsive Design */
-@media (max-width: 768px) {
-    .heading h1 {
-        font-size: 2rem;
-    }
-
-    .data-box {
-        padding: 20px;
-    }
-
-    .userName {
-        font-size: 1.5rem;
-    }
-
-    .extra ul {
-        flex-direction: column;
-        gap: 15px;
-    }
-
-    .extra ul li {
-        font-size: 1rem;
-    }
+.username{
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 30px;
+    font-weight: bolder;
+    font-style: italic;
+    margin-top: 10px;
+    text-align: center;
 }
+

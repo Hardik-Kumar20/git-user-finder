@@ -8,11 +8,13 @@ document.head.appendChild(fetch);
 
 let data_box = document.querySelector(".data-box") ;
 let search = document.querySelector(".input");
-let avatar = document.querySelector(".profile-photo");
+let avatar = document.querySelector("#avatar");
 let user = document.querySelector(".userName");
 let followers = document.querySelector(".followers");
 let following = document.querySelector(".following");
 let repos = document.querySelector(".repos");
+let USERNAME = document.querySelector(".username")
+console.log(avatar)
 
 data_box.style.display = "none";
 
@@ -25,6 +27,8 @@ const errorfn = (message)=>{
 const userGetFunction = (name) =>{
     axios(api + name).then((response)=>{
         userCard(response.data);
+        console.log(response.data)
+        usernamee(response.data.name);
         repoGetInfo(name);
     })
     .catch((err)=>{
@@ -46,10 +50,16 @@ const repoGetInfo = (name)=>{
     
 }
 
+// name function to get name inside heading 
+const usernamee = (name)=>{
+    USERNAME.innerHTML = name;
+}
+
 const userCard = (user)=>{
     let id = user.name || user.login;
     let info = user.bio ? `<p>${user.bio}</p>` : "";
     avatar.src = user.avatar_url;
+    console.log(user.avatar_url)
     followers.innerHTML = user.followers;
     following.innerHTML = user.following;
     repos.innerHTML = user.public_repos;
